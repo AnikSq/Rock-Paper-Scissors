@@ -3,6 +3,8 @@ let playerWin = 0;
 let computerWin = 0;
 let playerWeapon = "";
 let computerChoice = "";
+let humanCounter = document.getElementById('counter-1')
+let aiCounter = document.getElementById('counter-2')
 
 
 function randomNumber() { 
@@ -35,6 +37,12 @@ function computerPlay(){
 
 }
 
+function increment(counter){
+    let number = counter.innerHTML
+    number++;
+    counter.innerHTML = number
+}
+
 function playerChoice(){
 
     playerWeapon = prompt("Please enter your weapon")
@@ -59,18 +67,22 @@ function Game(){
         else if (playerWeapon == "rock" && computerChoice == "scissors"){
             alert("Fatality , You win this round");
             playerWin++;
+            increment(humanCounter);
         }
         else if (playerWeapon == "scissors" && computerChoice == "paper"){
             alert("On a way to Victory, Human wins this round")
             playerWin++;
+            increment(humanCounter);
         }
         else if (playerWeapon == "paper" && computerChoice == "rock"){
             alert("Human Wins")
             playerWin++;
+            increment(humanCounter);
         }
         else{
             alert("A,I is taking over humans")
             computerWin++;
+            increment(aiCounter);
         }
 
         if (playerWin >= 5){
@@ -85,7 +97,7 @@ function Game(){
         }
 
         if (computerWin >= 5 ){
-            alert("A.I is gonna take over! initializing...")
+            alert("Current Objective : Wipe Civilization , initializing")
             let answer = prompt("Would you like to play again?")
             if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
                 gameEnd = false

@@ -1,0 +1,27 @@
+.all-the-text{
+    display: flex;
+    flex-direction: column;
+}
+.context,.first-paragraph,.second-paragraph,.third-paragraph,.play-paragraph{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+.context{
+    font-size: medium;
+    font-weight: 700;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+}
+.counters{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    font-size: 32px;
+    font-weight: 900;
+}
