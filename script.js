@@ -54,40 +54,27 @@ function Game(){
         computerChoice = computerChoice.toLowerCase();
 
         if(playerWeapon === computerChoice){
-            console.log("It's a Tie! , Do it again!")
+            alert("A.I : Human be unique")
         }
         else if (playerWeapon == "rock" && computerChoice == "scissors"){
-            console.log("You Win!")
-           let answer = prompt("Would you like to play again?")
-            if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
-                gameEnd = false
-            }
-            else{
-                gameEnd = true
-            }
+            alert("Fatality , You win this round");
+            playerWin++;
         }
         else if (playerWeapon == "scissors" && computerChoice == "paper"){
-            console.log("You Win!")
-            let answer = prompt("Would you like to play again?")
-            if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
-                gameEnd = false
-            }
-            else{
-                gameEnd = true
-            }
+            alert("On a way to Victory, Human wins this round")
+            playerWin++;
         }
         else if (playerWeapon == "paper" && computerChoice == "rock"){
-            console.log("You Win!")
-            let answer = prompt("Would you like to play again?")
-            if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
-                gameEnd = false
-            }
-            else{
-                gameEnd = true
-            }
+            alert("Human Wins")
+            playerWin++;
         }
         else{
-            console.log("You Lose")
+            alert("A,I is taking over humans")
+            computerWin++;
+        }
+
+        if (playerWin >= 5){
+            alert("Human wins! , keeping civilization alive");
             let answer = prompt("Would you like to play again?")
             if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
                 gameEnd = false
@@ -97,6 +84,16 @@ function Game(){
             }
         }
 
+        if (computerWin >= 5 ){
+            alert("A.I is gonna take over! initializing...")
+            let answer = prompt("Would you like to play again?")
+            if (answer.toLocaleLowerCase() === "yes" || answer.toLocaleLowerCase() === "y"){
+                gameEnd = false
+            }
+            else{
+                gameEnd = true
+            }
+        }
     }
     
 }
